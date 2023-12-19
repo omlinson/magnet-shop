@@ -52,3 +52,13 @@
   max-width: none;
   line-height: var(--line-height-loose);
 }
+
+.imageGallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 1rem; /* Adjust gap as needed */
+}
+
+.imageContainer {
+  width: 100%; /* Full width of the column */
+}

@@ -22,7 +22,6 @@ const IndexPage = () => {
         nodes {
           name
           image
-          availability
         }
       }
       allFile(filter: {sourceInstanceName: {eq: "fridge-magnet-pics"}}) {
@@ -36,14 +35,17 @@ const IndexPage = () => {
     }
   `);
 
-  // Extract filenames and availability from Google Sheets data
-  const sheetDataMap = new Map(
-    data.allGooglePimSheet.nodes.map(node => [node.image, { name: node.name, availability: node.availability }])
+  // Extract filenames from Google Sheets data
+  const sheetImageNames = data.allGooglePimSheet.nodes.map(node => node.image);
+
+  // Create a map of image names to product names
+  const imageNameToProductNameMap = new Map(
+    data.allGooglePimSheet.nodes.map(node => [node.image, node.name])
   );
 
   // Filter filesystem images to only those that match
   const matchingImages = data.allFile.nodes.filter(fileNode =>
-    sheetDataMap.has(fileNode.name)
+    sheetImageNames.includes(fileNode.name)
   );
 
   // Shuffle and slice to get 10 random images
@@ -52,39 +54,21 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo title="Fridge Magnets" />
-      <div>
-        <h1>omlinson</h1>
-        <h2>Fridge Magnets</h2>
+      <div className={styles.textCenter}>
+        <h1>Fridge Magnets</h1>
       </div>
       
       <div className={styles.imageGallery}>
-        {matchingImages.map((fileNode, index) => {
-          const productData = sheetDataMap.get(fileNode.name);
-          const slug = productData ? slugify(productData.name) : '#';
+      {matchingImages.map((fileNode, index) => {
+          const productName = imageNameToProductNameMap.get(fileNode.name);
+          const slug = productName ? slugify(productName) : '#';
           return (
-            <div key={index} style={{ position: 'relative' }}>
-              <Link to={productData ? `/fridge-magnets/${slug}` : '#'}>
-                <GatsbyImage
-                  image={getImage(fileNode.childImageSharp)}
-                  alt={`Fridge Magnet ${productData.name || 'Image'}`}
-                />
-              </Link>
-              {productData.availability !== "in stock" && (
-                <div style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  backgroundColor: 'rgba(0, 0, 0, 1)',
-                  color: 'white',
-                  padding: '10px',
-                  textAlign: 'center',
-                  textTransform: 'uppercase'
-                }}>
-                  {productData.availability}
-                </div>
-              )}
-            </div>
+            <Link to={productName ? `/fridge-magnets/${slug}` : '#'} key={index}>
+              <GatsbyImage
+                image={getImage(fileNode.childImageSharp)}
+                alt={`Fridge Magnet ${productName || 'Image'}`}
+              />
+            </Link>
           );
         })}
       </div>
