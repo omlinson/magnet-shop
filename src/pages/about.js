@@ -13,13 +13,14 @@ const SecondPage = () => (
     <h2>Roadmap</h2>
     <p>There is no particular order here.</p>
     <ul>
-     <li>Tracking & privacy policy</li>
-     <li>Additional ecom functions</li>
+     <li>Tracking + privacy policy</li>
+     <li>More ecom features</li>
      <li>Contact form</li>
-     <li>Resume & consulting section</li>
+     <li>Consulting offer</li>
+     <li>Localization</li>
     </ul>
     <h2>About Philip Tomlinson</h2>
-    <p>Explore the site or use the links in the footer to continue learning about me, Philip Tomlinson.</p>
+    <p>Explore the site or use the links in the footer to learn more about me, Philip Tomlinson.</p>
   </div>
   
   

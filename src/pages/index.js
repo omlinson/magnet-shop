@@ -25,7 +25,7 @@ const IndexPage = () => {
           availability
         }
       }
-      allFile(filter: {sourceInstanceName: {eq: "fridge-magnet-pics"}}) {
+      allFile {
         nodes {
           childImageSharp {
             gatsbyImageData(width: 300, quality: 80, layout: CONSTRAINED)
@@ -65,7 +65,7 @@ const IndexPage = () => {
             <div key={index} style={{ position: 'relative' }}>
               <Link to={productData ? `/fridge-magnets/${slug}` : '#'}>
                 <GatsbyImage
-                  image={getImage(fileNode.childImageSharp)}
+                  image={getImage(fileNode.childImageSharp.gatsbyImageData)}
                   alt={`Fridge Magnet ${productData.name || 'Image'}`}
                 />
               </Link>

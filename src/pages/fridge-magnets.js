@@ -24,7 +24,7 @@ const IndexPage = () => {
           image
         }
       }
-      allFile(filter: {sourceInstanceName: {eq: "fridge-magnet-pics"}}) {
+      allFile {
         nodes {
           childImageSharp {
             gatsbyImageData(width: 300, quality: 80, layout: CONSTRAINED)
