@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
 
 const moreLinks = [
   { text: "LinkedIn", url: "https://linkedin.com/in/omlinson" },

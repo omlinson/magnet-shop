@@ -8,7 +8,7 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 
-//require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` })
+require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` })
 
 module.exports = {
   siteMetadata: {
@@ -23,14 +23,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`, 
-        path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `fridge-magnet-pics`, // name for the new path
-        path: `../web/img/fridge-magnets`, // new path
+        path: `${__dirname}/src/images/fridge-magnets`,
       },
     },
     `gatsby-transformer-sharp`,
