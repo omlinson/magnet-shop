@@ -5,6 +5,16 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as styles from "../components/index.module.css"
 
+const slugify = (text) => {
+    return text
+      .toString()
+      .toLowerCase()
+      .replace(/\s+/g, '-')     // Replace spaces with -
+      .replace(/[^\w\-]+/g, '') // Remove all non-word chars
+      .replace(/\-\-+/g, '-')   // Replace multiple - with single -
+      .trim();                  // Trim - from start and end of text
+  };
+
 const TagTemplate = ({ data, pageContext }) => {
     const { tag } = pageContext
     const magnets = data.allGooglePimSheet.nodes
@@ -23,8 +33,9 @@ const TagTemplate = ({ data, pageContext }) => {
         <div className={styles.imageGallery}>
         {magnets.map((magnet, index) => {
           const imageData = imageMap.get(magnet.image);
+          const slug = magnet.name ? slugify(magnet.name) : '#';
           return (
-            <Link to={`/fridge-magnets/${magnet.name}`} key={index}>
+            <Link to={magnet.name ? `/fridge-magnets/${slug}` : '#'} key={index}>
               {imageData && (
                 <GatsbyImage
                   image={getImage(imageData.gatsbyImageData)}

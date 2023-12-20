@@ -4,6 +4,17 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+
+const slugify = (text) => {
+  return text
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, '-')     // Replace spaces with -
+    .replace(/[^\w\-]+/g, '') // Remove all non-word chars
+    .replace(/\-\-+/g, '-')   // Replace multiple - with single -
+    .trim();                  // Trim - from start and end of text
+};
+
 const ProductTemplate = ({ data }) => {
   const product = data.googlePimSheet // Adjust based on your actual query
   const productImageData = data.file.childImageSharp.gatsbyImageData
@@ -12,7 +23,9 @@ const ProductTemplate = ({ data }) => {
     <Layout>
       <Seo title={product.name + " Fridge Magnet"} />
       <div>
-        <a href="/">All Fridge Magnets</a>
+        <a style={{fontSize:`small`}} href="/">All Fridge Magnets</a>
+        <a style={{fontSize:`small`, marginLeft:`3%`}} href={`/${slugify(product.tag1)}-fridge-magnets`}>
+          All {product.tag1} Magnets</a>
         <h1>{product.name}</h1>
         <div style={{ position: 'relative', maxWidth: '600px', margin: '0 auto 0 0' }}>
           <GatsbyImage image={getImage(productImageData)} alt={product.name} />
@@ -55,6 +68,7 @@ export const query = graphql`
       sizeMm
       sizeInch
       availability
+      tag1
     }
     file(name: { eq: $imageName }) {
       childImageSharp {
