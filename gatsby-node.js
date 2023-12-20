@@ -27,21 +27,34 @@ exports.createPages = async ({ graphql, actions }) => {
           sKU
           image
           name
+          tag1
         }
+        distinct(field: tag1)
       }
     }
   `)
 
+  // Create individual magnet pages
   result.data.allGooglePimSheet.nodes.forEach(node => {
     const pathSlug = slugify(node.name);
     createPage({
-      path: `/fridge-magnets/${pathSlug}`, // Define path using the SKU or another unique field
+      path: `/fridge-magnets/${pathSlug}`,
       component: require.resolve("./src/templates/magnetTemplate.js"),
       context: {
-        sKU: node.sKU, // Pass SKU as context for the template query
-        imageName: node.image // Pass the image filename as context
-
+        sKU: node.sKU,
+        imageName: node.image
       },
-    })
-  })
-}
+    });
+  });
+
+  result.data.allGooglePimSheet.distinct.forEach(tag => {
+    const tagSlug = slugify(tag);
+    createPage({
+      path: `/${tagSlug}-fridge-magnets`,
+      component: require.resolve("./src/templates/tagTemplate.js"),
+      context: {
+        tag: tag
+      },
+    });
+  });
+};
