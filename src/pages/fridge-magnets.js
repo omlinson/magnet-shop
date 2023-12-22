@@ -54,7 +54,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo title="Fridge Magnets" />
-      <div className={styles.textLeft}>
+      <div>
         <h1>Fridge Magnets</h1>
       </div>
       

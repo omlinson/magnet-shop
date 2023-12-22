@@ -27,6 +27,6 @@ const SecondPage = () => (
 </Layout>
 )
 
-export const Head = () => <Seo title="Page two" />
+export const Head = () => <Seo title="About omlinson & Philip Tomlinson" />
 
 export default SecondPage

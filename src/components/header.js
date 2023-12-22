@@ -21,8 +21,22 @@ const Header = ({ siteTitle }) => (
     >
       {siteTitle}
     </Link>
-    <a style ={{ marginLeft:`3%`,marginRight:`1%` }} href="/">Home</a>
-    <a style ={{ marginLeft:`3%`,marginRight:`auto` }} href="/about">About</a>
+    <Link
+      to="/"
+      style={{
+        marginLeft:`3%`,marginRight:`1%`
+      }}
+    >
+      Home
+    </Link>
+    <Link
+      to="/about"
+      style={{
+        marginLeft:`3%`,marginRight:`auto`
+      }}
+    >
+      About
+    </Link>
   </header>
 )
 
