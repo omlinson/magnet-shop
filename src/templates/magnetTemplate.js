@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -23,9 +23,9 @@ const ProductTemplate = ({ data }) => {
     <Layout>
       <Seo title={product.name + " Fridge Magnet"} />
       <div>
-        <a style={{fontSize:`small`}} href="/">All Fridge Magnets</a>
-        <a style={{fontSize:`small`, marginLeft:`3%`}} href={`/${slugify(product.tag1)}-fridge-magnets`}>
-          All {product.tag1} Magnets</a>
+        <Link style={{fontSize:`small`}} to={`/fridge-magnets`}>All Fridge Magnets</Link>
+        <Link style={{fontSize:`small`, marginLeft:`3%`}} to={`/${slugify(product.tag1)}-fridge-magnets`}>
+          All {product.tag1} Magnets</Link>
         <h1>{product.name}</h1>
         <div style={{ position: 'relative', maxWidth: '600px', margin: '0 auto 0 0' }}>
           <GatsbyImage image={getImage(productImageData)} alt={product.name} />

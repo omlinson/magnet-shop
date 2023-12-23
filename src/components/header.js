@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import Consent from "./consent"
 
 const Header = ({ siteTitle }) => (
   <header
@@ -37,6 +38,9 @@ const Header = ({ siteTitle }) => (
     >
       About
     </Link>
+    <div>
+      <Consent/> 
+    </div>
   </header>
 )
 

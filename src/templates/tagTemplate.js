@@ -27,7 +27,7 @@ const TagTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       <Seo title={`${tag} Fridge Magnets`} />
-      <a href="/">All Fridge Magnets</a>
+      <Link style={{fontSize:`small`}} to={`/fridge-magnets`}>All Fridge Magnets</Link>
         <h1>{`${tag} Fridge Magnets`}</h1>
       
         <div className={styles.imageGallery}>
