@@ -18,6 +18,11 @@ const ConsentComponent = () => {
       event: 'cookie-consent-update',
       cookieConsent: response
     });
+    window.gtag && window.gtag('consent', 'update', {
+      'ad_storage': response === 'yes' ? 'granted' : 'denied',
+      'analytics_storage': response === 'yes' ? 'granted' : 'denied'
+    });
+
   };
 
   if (consent === 'yes' || consent === 'no') {

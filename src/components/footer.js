@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Link } from "gatsby"
 
 const moreLinks = [
   { text: "LinkedIn", url: "https://linkedin.com/in/omlinson" },
@@ -24,7 +25,8 @@ const Footer = ({ siteTitle }) => (
         {i !== moreLinks.length - 1 && <> · </>}
       </React.Fragment>
     ))} </p>  
-  © {new Date().getFullYear()} Philip Tomlinson 
+    <p  style={{fontSize:`x-small`}}>© {new Date().getFullYear()} Philip Tomlinson | <Link to="/privacy-policy">Privacy Policy</Link></p>
+
 </footer>
 )
 
