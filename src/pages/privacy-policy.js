@@ -11,6 +11,7 @@ const SecondPage = () => (
 
     <h2>What Information Do We Collect?</h2>
     <p>We don't collect any personal data directly on our website. However, some tools we use might gather data to help us understand how you interact with the site, improve your experience, and show you relevant content:</p>
+    <p>Fun fact: some browsers and VPNs will still block data collection even if you accept to share!</p>
     <ul>
         <li><strong>Netlify:</strong> Takes care of hosting our website. They might collect some basic info about your device and how you use the site, but nothing personally identifiable to you.</li>
         <li><strong>Google Tag Manager:</strong> This is being used to monitor your consent. Its datalayer stores information about your session but is only stored & shared with the following if you accept.</li>
