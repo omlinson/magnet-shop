@@ -38,7 +38,7 @@ const ProductTemplate = ({ data }) => {
         ]
       });
     }
-  }, [data.product]); // Depend on product data to trigger the effect
+  }, [product]); // Depend on product data to trigger the effect
 
 
   return (
