@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
@@ -16,8 +16,30 @@ const slugify = (text) => {
 };
 
 const ProductTemplate = ({ data }) => {
-  const product = data.googlePimSheet // Adjust based on your actual query
+  const product = data.googlePimSheet 
   const productImageData = data.file.childImageSharp.gatsbyImageData
+
+
+  useEffect(() => {
+    if (window.gtag) {
+      window.gtag('event', 'view_item', {
+        currency: "CAD",
+        value: product.price,
+        "items": [
+          {
+            "item_id": product.sKU, 
+            "item_name": product.name, 
+            "affiliation": "omlinson",
+            "item_brand" : "omlinson",
+            "item-category": "Fridge Magnets",
+            "price": product.price,
+            "quantity": 1,
+          }
+        ]
+      });
+    }
+  }, [data.product]); // Depend on product data to trigger the effect
+
 
   return (
     <Layout>
