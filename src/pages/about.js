@@ -12,10 +12,10 @@ const SecondPage = () => (
     <h2>In Progress</h2>
     <h3>Ecommerce Lab</h3>
     <p>The current iteration is a simple Jamstack powered by <a href="https://www.gatsbyjs.com/" target="_blank" rel="noreferrer">Gatsby</a> and <a href="https://docs.google.com/spreadsheets/d/16I6W2yArFYZX3gGrwCALkWs4zKagammZlTBfusQYAPI/edit?usp=sharing" target="_blank" rel="noreferrer">Google Sheets</a> showcasing one of my current hobbies: making fridge magnets.</p>
-    <p>GDP & Loi 25 consent management is present. Google Tag Manager & GA4 including enhanced ecommerce measurements are set.</p>
+    <p>GDP & Loi 25 consent management is present. Google Tag Manager & GA4 including some enhanced ecommerce measurements.</p>
     <h4>Roadmap</h4>
     <ul>
-     <li>Finalize tracking (ecommerce isn't really set)</li>
+     <li>Pagination & item_lists tracking</li>
      <li>Consolidate components & functions</li>
      <li>Localization</li>
     </ul>
