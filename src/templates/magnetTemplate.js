@@ -21,24 +21,24 @@ const ProductTemplate = ({ data }) => {
 
 
   useEffect(() => {
-    if (window.gtag) {
-      window.gtag('event', 'view_item', {
-        currency: "CAD",
-        value: product.price,
-        "items": [
-          {
-            "item_id": product.sKU, 
-            "item_name": product.name, 
-            "affiliation": "omlinson",
-            "item_brand" : "omlinson",
-            "item-category": "Fridge Magnets",
-            "price": product.price,
-            "quantity": 1,
-          }
-        ]
-      });
-    }
-  }, [product]); // Depend on product data to trigger the effect
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'view_item',
+      'currency': "CAD",
+      'value': product.price,
+      'items': [
+        {
+          'item_id': product.sKU, 
+          'item_name': product.name, 
+          'affiliation': "omlinson",
+          'item_brand': "omlinson",
+          'item_category': "Fridge Magnets",
+          'price': product.price,
+          'quantity': 1,
+        }
+      ]
+    });
+  }, [product]);
 
 
   return (
