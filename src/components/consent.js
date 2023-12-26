@@ -27,7 +27,7 @@ const ConsentComponent = () => {
 
   if (consent === 'yes' || consent === 'no') {
     return (
-      <div>
+      <div style={{width:`100%`}}>
         <button onClick={() => handleConsent(consent === 'yes' ? 'no' : 'yes')}>
           {consent === 'yes' ? ' o ' : ' - '}
         </button>
@@ -39,7 +39,7 @@ const ConsentComponent = () => {
   }
 
   return (
-    <div>
+    <div style={{width:`100%`, textAlign:`right`}}>
       Can Google & Meta watch you?{' '}
       <button onClick={() => handleConsent('yes')}>Yes</button>{' '}
       <button onClick={() => handleConsent('no')}>No</button>{' '}

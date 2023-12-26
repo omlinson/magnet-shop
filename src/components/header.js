@@ -1,18 +1,16 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import Consent from "./consent"
+import "./layout.css"
 
 const Header = ({ siteTitle }) => (
   <header
     style={{
       margin: `0 auto`,
       padding: `var(--space-4) var(--size-gutter)`,
-      display: `flex`,
-      alignItems: `center`,
-      justifyContent: `space-between`,
-      textAlign: `left`
     }}
   >
+    <div style={{marginBottom:`1%`}}>
     <Link
       to="/"
       style={{
@@ -22,6 +20,8 @@ const Header = ({ siteTitle }) => (
     >
       {siteTitle}
     </Link>
+    </div>
+    <div style={{width:`100%`}}>
     <Link
       to="/"
       style={{
@@ -38,10 +38,10 @@ const Header = ({ siteTitle }) => (
     >
       About
     </Link>
-    <div>
-      <Consent/> 
     </div>
-  </header>
+    
+      <Consent/> 
+     </header>
 )
 
 export default Header

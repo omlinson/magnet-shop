@@ -43,6 +43,18 @@ body {
   margin: 0;
   word-wrap: break-word;
 }
+header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: left;
+  flex-flow: row nowrap;
+}
+@media(max-width: 600px) {
+  header {
+    flex-flow: column wrap;
+  }
+}
 a {
   background-color: transparent;
   color: var(--color-primary);
