@@ -50,10 +50,44 @@ header {
   text-align: left;
   flex-flow: row nowrap;
 }
-@media(max-width: 600px) {
+.consent {
+  width: 100%; 
+  text-align: right;
+}
+
+.menu {
+  width: 100%; 
+  margin-left: 3%;
+
+}
+
+div.consent > div > p {
+  display:inline;
+  margin-right: 1%;
+}
+
+@media(max-width: 900px) {
   header {
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
   }
+
+  .consent {
+    text-align: left;
+    margin-bottom:1%;
+    order: -1;
+  }
+
+div.consent > div > p {
+  display:block;
+}
+
+  .menu {
+    margin-left: 0px;
+    margin-bottom: 1%;
+
+  }
+
 }
 a {
   background-color: transparent;

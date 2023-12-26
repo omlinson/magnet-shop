@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import Consent from "./consent"
-import "./layout.css"
+import  "./layout.css"
 
 const Header = ({ siteTitle }) => (
   <header
@@ -21,11 +21,11 @@ const Header = ({ siteTitle }) => (
       {siteTitle}
     </Link>
     </div>
-    <div style={{width:`100%`}}>
+    <div  className="menu" >
     <Link
       to="/"
       style={{
-        marginLeft:`3%`,marginRight:`1%`
+        marginRight:`1%`
       }}
     >
       Home
@@ -39,8 +39,9 @@ const Header = ({ siteTitle }) => (
       About
     </Link>
     </div>
-    
+    <div className="consent">
       <Consent/> 
+      </div>
      </header>
 )
 
