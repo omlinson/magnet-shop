@@ -27,7 +27,7 @@ const ConsentComponent = () => {
 
   if (consent === 'yes' || consent === 'no') {
     return (
-      <div>
+      <div class="active">
         <button onClick={() => handleConsent(consent === 'yes' ? 'no' : 'yes')}>
           {consent === 'yes' ? ' o ' : ' - '}
         </button>

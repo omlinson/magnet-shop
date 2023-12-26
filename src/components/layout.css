@@ -73,10 +73,14 @@ div.consent > div > p {
   }
 
   .consent {
-    text-align: left;
     margin-bottom:1%;
     order: -1;
+    text-align: left;
   }
+
+div.consent > div.active {
+  text-align: right;
+}
 
 div.consent > div > p {
   display:block;
