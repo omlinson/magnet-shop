@@ -38,6 +38,14 @@ const Header = ({ siteTitle }) => (
     >
       About
     </Link>
+    <Link
+      to="/favorites"
+      style={{
+        marginLeft:`3%`,marginRight:`auto`
+      }}
+    >
+      Your Favorites
+    </Link>
     </div>
     <div className="consent">
       <Consent/> 

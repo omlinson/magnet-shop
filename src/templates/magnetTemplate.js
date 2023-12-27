@@ -15,6 +15,14 @@ const slugify = (text) => {
     .trim();                  // Trim - from start and end of text
 };
 
+const addToFavorites = (productId) => {
+  let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  if (!favorites.includes(productId)) {
+    favorites.push(productId);
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }
+};
+
 const ProductTemplate = ({ data }) => {
   const product = data.googlePimSheet 
   const productImageData = data.file.childImageSharp.gatsbyImageData
@@ -70,9 +78,11 @@ const ProductTemplate = ({ data }) => {
          <div>
          <p>Size: {product.size} ({product.sizeMm} mm / {product.sizeInch} in)</p>
          <p>Suggested Price: ${product.price} + SHIPPING</p>
+         <div>
          <a href="https://www.instagram.com/_omlinson" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', padding: '10px 20px', margin: '20px 0', backgroundColor: '#7026b9', color: 'white', borderRadius: '5px', textDecoration: 'none', textAlign: 'center' }}>
           DM 4 MAGNET$
         </a>
+       <button style={{ display: 'inline-block', padding: '10px 20px', margin: '20px 0', backgroundColor: '#7026b9', color: 'white', borderRadius: '5px', textDecoration: 'none', textAlign: 'center' }} onClick={() => addToFavorites(product.sKU)}>ADD TO FAVORITES</button></div>
         </div>
         </div>
     </Layout>

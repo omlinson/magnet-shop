@@ -9,7 +9,7 @@ const moreLinks = [
   },
   {
     text: "GitHub",
-    url: "https://github.com/omlinson",
+    url: "https://github.com/omlinson/magnet-shop",
   }
 ]
 
