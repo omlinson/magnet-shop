@@ -18,7 +18,6 @@ const SecondPage = () => (
     <ul>
      <li>Pagination & item_lists tracking</li>
      <li>Consolidate components & functions</li>
-     <li>Localization</li>
     </ul>
     <h3>Brand Lab</h3>
     <p>Building up social media accounts based on what is happening in Ecommerce Lab.</p>
@@ -27,8 +26,7 @@ const SecondPage = () => (
     <h4>Roadmap</h4>
     <ul>
      <li>Weekly Instagram Reel Concept</li>
-     <li>Logo Improvements</li>
-     <li>Design Fixes</li>
+    <li>GTM Plan</li>
      <li>First B2B Offers</li>
      <li>Localization</li>
     </ul>
@@ -38,9 +36,9 @@ const SecondPage = () => (
     <h4>Roadmap</h4>
     <ul>
      <li>GA4 API</li>
-     <li>Web data visualization tests</li>
+     <li>Web Dashboard</li>
+     <li>Cloud Computing</li>
      <li>Daily Python Appsflyer ETL job</li>
-     <li>Localization</li>
     </ul>
     
     <h2>About Philip Tomlinson</h2>

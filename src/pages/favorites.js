@@ -5,9 +5,13 @@ import Seo from "../components/seo";
 import ProductList from "../components/productList"; 
 
 const Favorites = () => {
+  // useState to hold the array of favorite products
   const [favorites, setFavorites] = useState([]);
+
+  // useState to hold the map of images associated with the products
   const [imageMap, setImageMap] = useState(new Map());
 
+  // Static query to fetch product and image data
   const data = useStaticQuery(graphql`
     query {
       allGooglePimSheet {
@@ -30,35 +34,43 @@ const Favorites = () => {
   `);
 
   useEffect(() => {
-    // Fetch favorites from local storage
+    // useEffect hook to update the state whenever the component mounts or data changes
+
+    // Fetch the list of favorite product IDs from local storage
     let favoriteIds = JSON.parse(localStorage.getItem('favorites')) || [];
 
-    // Filter products that are marked as favorites
+    // Filter the products to get only those that are in the favorites list
     const favoriteProducts = data.allGooglePimSheet.nodes.filter(product => 
       favoriteIds.includes(product.sKU)
     );
 
-    // Create an image map from the queried image data
+    // Create a new map for images where the key is the image name and value is the image data
     const newImageMap = new Map(
       data.allFile.nodes.map(fileNode => [fileNode.name, fileNode.childImageSharp])
     );
 
+    // Update the state with the filtered favorite products and the new image map
     setFavorites(favoriteProducts);
     setImageMap(newImageMap);
   }, [data.allGooglePimSheet.nodes, data.allFile.nodes]);
 
   return (
     <Layout>
-      <Seo title="Your Favorite Magnets" />
+      <Seo title="Your Likes" />
       <div>
-        <h1>Your Favorite Magnets</h1>
-        <p>These are stored in your browser's local storage and will not follow you between devices.</p>
-        <ProductList products={favorites} imageMap={imageMap} />
+        <h1>Your Likes</h1>
+        {/* Conditional rendering based on whether the favorites array is empty */}
+        {favorites.length === 0 ? (
+          <p>You have not liked any magnets.</p>
+        ) : ( <ProductList products={favorites} imageMap={imageMap} />)}
+        
+      </div>
+      <div style={{marginTop:`2%`}}>
+        <p>Your likes are stored in your browser's local storage and will not follow you between devices.</p>
       </div>
     </Layout>
   );
 };
-
 
 export const Head = () => <Seo title="Your Favorite Magnets" />
 

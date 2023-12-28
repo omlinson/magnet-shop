@@ -45,7 +45,7 @@ const ImageGallery = ({ products, imageMap }) => {
     {products.map((product, index) => {
       const imageData = imageMap.get(product.image);
       const slug = product.name ? slugify(product.name) : '#';
-      const favoriteStatus = isFavorite(product) ? 'Remove from Favorites' : 'Add to Favorites';
+      const favoriteStatus = isFavorite(product) ? 'Unlike' : 'Like';
       return (
         <div key={index} style={{ position: 'relative' }}>
           <Link to={product.name ? `/fridge-magnets/${slug}` : '#'}>

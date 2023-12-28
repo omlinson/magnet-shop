@@ -56,7 +56,7 @@ header {
 }
 
 .menu {
-  width: 100%; 
+  width: 50%; 
   margin-left: 3%;
 
 }
@@ -112,6 +112,50 @@ abbr[title] {
   cursor: help;
   text-decoration: none;
 }
+
+a.button, button {
+  background-color: #58cc02;
+  color: white;
+  border: none;
+  border-radius: 25px; 
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 0px #3a8b02;
+  outline-width: 0;
+  text-decoration: none;
+  line-height:24px;
+  font-family: sans-serif;
+  font-family: var(--font-sans);
+  
+}
+
+a.button:hover,a.button:focus, button:hover, button:focus {
+  box-shadow: 0 3px 0px #3a8b02;
+  transform:translateY(1px);
+  outline-width: 0;
+  text-decoration: none;
+  line-height:24px;
+  font-family: sans-serif;
+  font-family: var(--font-sans);
+
+  
+}
+
+a.button:active, button:active {
+  box-shadow: none;
+  transform:translateY(5px);
+  outline-width: 0;
+  text-decoration: none;
+  line-height:24px;
+  font-family: sans-serif;
+  font-family: var(--font-sans);
+}
+
+
+
 b,
 strong {
   font-weight: inherit;

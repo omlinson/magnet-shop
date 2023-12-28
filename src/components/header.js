@@ -39,12 +39,20 @@ const Header = ({ siteTitle }) => (
       About
     </Link>
     <Link
+      to="/fridge-magnets"
+      style={{
+        marginLeft:`3%`,marginRight:`auto`
+      }}
+    >
+      Magnets
+    </Link>
+    <Link
       to="/favorites"
       style={{
         marginLeft:`3%`,marginRight:`auto`
       }}
     >
-      Your Favorites
+      Liked
     </Link>
     </div>
     <div className="consent">

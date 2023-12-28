@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import FavoriteToggle from "../components/favoriteToggle"
 
 
 const slugify = (text) => {
@@ -15,13 +16,6 @@ const slugify = (text) => {
     .trim();                  // Trim - from start and end of text
 };
 
-const addToFavorites = (productId) => {
-  let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-  if (!favorites.includes(productId)) {
-    favorites.push(productId);
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-  }
-};
 
 const ProductTemplate = ({ data }) => {
   const product = data.googlePimSheet 
@@ -75,16 +69,17 @@ const ProductTemplate = ({ data }) => {
             </div>
           )}
         </div>
-         <div>
-         <p>Size: {product.size} ({product.sizeMm} mm / {product.sizeInch} in)</p>
-         <p>Suggested Price: ${product.price} + SHIPPING</p>
-         <div>
-         <a href="https://www.instagram.com/_omlinson" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', padding: '10px 20px', margin: '20px 0', backgroundColor: '#7026b9', color: 'white', borderRadius: '5px', textDecoration: 'none', textAlign: 'center' }}>
+        <div>
+          <p>Size: {product.size} ({product.sizeMm} mm / {product.sizeInch} in)</p>
+          <p>Suggested Price: ${product.price} + SHIPPING</p>
+        <div>
+        <FavoriteToggle productId={product.sKU} />
+          <a  className="button" href="https://www.instagram.com/_omlinson" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block' }}>
           DM 4 MAGNET$
-        </a>
-       <button style={{ display: 'inline-block', padding: '10px 20px', margin: '20px 0', backgroundColor: '#7026b9', color: 'white', borderRadius: '5px', textDecoration: 'none', textAlign: 'center' }} onClick={() => addToFavorites(product.sKU)}>ADD TO FAVORITES</button></div>
+          </a>     
         </div>
-        </div>
+      </div>
+      </div>
     </Layout>
   )
 }
