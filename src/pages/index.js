@@ -38,8 +38,7 @@ const IndexPage = () => {
     <Layout>
       <Seo title="Fridge Magnets" />
       <div>
-        <h1>omlinson</h1>
-        <h2>Fridge Magnets</h2>
+        <h1>Fridge Magnets</h1>
       </div>
 
       <ProductList products={data.allGooglePimSheet.nodes} imageMap={imageMap} />

@@ -67,32 +67,71 @@ div.consent > div > p {
 }
 
 @media(max-width: 900px) {
+  
   header {
     flex-flow: column nowrap;
     justify-content: flex-start;
   }
 
-  .consent {
-    margin-bottom:1%;
-    order: -1;
-    text-align: left;
+  header.defined {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
   }
 
-div.consent > div.active {
-  text-align: right;
-}
+  .navigation.defined {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+  }
 
-div.consent > div > p {
-  display:block;
-}
+  .logo {
+    margin-bottom: 15%;
+  }
+
 
   .menu {
+    order:2;
+    display:flex;
     margin-left: 0px;
-    margin-bottom: 1%;
+    justify-content: flex-start;
+    align-content:space-around;
+    width:100%;
+    gap:20%;
+    overflow:visible;
 
   }
 
+  .consent.undefined{
+  order: -1;
+  margin-bottom:1%;
+  text-align: left;
+  background-color: #f8f9fa; /* Light and neutral background */
+  color: #343a40; /* Darker text for contrast */
+  border: 2px solid #7d5ba6; /* Border color matching the button for coherence */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding for spacing */
+  font-family: var(--font-sans); /* Consistent font family */
+  margin: 20px 0; /* Margin for external spacing */
+  display: flex; /* Using Flexbox for internal layout */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center-align items */
+  justify-content: center; /* Center content */
+  text-align: center; /* Center text alignment */
+  }
+
+
+  .consent.defined{
+    order: 1;
+    text-align: right;
+  }
+
+   div.consent > div > p {
+  display:block;
+  }
+
+ 
+
 }
+
 a {
   background-color: transparent;
   color: var(--color-primary);

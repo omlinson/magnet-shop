@@ -19,7 +19,15 @@ const Footer = ({ siteTitle }) => (
     marginTop: `var(--space-5)`,
     fontSize: `var(--font-sm)`,
   }}
-> <p> {moreLinks.map((link, i) => (
+> <p> 
+  
+<Link
+      to="/about"
+    >
+      About
+    </Link>
+    <> · </>
+    {moreLinks.map((link, i) => (
       <React.Fragment key={link.url}>
         <a href={`${link.url}`}>{link.text}</a>
         {i !== moreLinks.length - 1 && <> · </>}

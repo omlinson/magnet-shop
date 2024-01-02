@@ -1,64 +1,50 @@
-import * as React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import Consent from "./consent"
 import  "./layout.css"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle }) => {
+
+  const [consentDefined, setConsentDefined] = useState(false);
+
+  const handleConsentChange = (isConsentDefined) => {
+    setConsentDefined(isConsentDefined);
+  };
+
+  return (
   <header
     style={{
       margin: `0 auto`,
       padding: `var(--space-4) var(--size-gutter)`,
     }}
+
+    className={`header ${consentDefined ? 'defined' : 'undefined'}`}
   >
-    <div style={{marginBottom:`1%`}}>
+    <div className="navigation">
+    <div className="logo">
     <Link
       to="/"
-      style={{
-        fontSize: `var(--font-sm)`,
-        textDecoration: `none`,
-      }}
     >
-      {siteTitle}
+      <button>{siteTitle}</button>
     </Link>
     </div>
     <div  className="menu" >
-    <Link
-      to="/"
-      style={{
-        marginRight:`1%`
-      }}
-    >
-      Home
-    </Link>
-    <Link
-      to="/about"
-      style={{
-        marginLeft:`3%`,marginRight:`auto`
-      }}
-    >
-      About
-    </Link>
-    <Link
+        <Link
       to="/fridge-magnets"
-      style={{
-        marginLeft:`3%`,marginRight:`auto`
-      }}
     >
       Magnets
     </Link>
     <Link
       to="/favorites"
-      style={{
-        marginLeft:`3%`,marginRight:`auto`
-      }}
     >
-      Liked
+      Likes
     </Link>
     </div>
-    <div className="consent">
-      <Consent/> 
+    </div>
+    <div  className={`consent ${consentDefined ? 'defined' : 'undefined'}`}>
+      <Consent onConsentChange={handleConsentChange} /> 
       </div>
      </header>
 )
-
+};
 export default Header
