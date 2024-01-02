@@ -56,9 +56,23 @@
 .imageGallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 1rem; /* Adjust gap as needed */
+  grid-gap: 1rem; /* Space between items */
+  align-items: start; /* Align items to the start of each cell */
 }
 
 .imageContainer {
   width: 100%; /* Full width of the column */
+}
+
+.productImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* Or 'contain' based on preference */
+}
+
+.productItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space out image and button */
+  height: 100%; /* Adjust as needed */
 }

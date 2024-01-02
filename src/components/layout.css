@@ -50,15 +50,29 @@ header {
   text-align: left;
   flex-flow: row nowrap;
 }
-.consent {
-  width: 100%; 
-  text-align: right;
+
+.navigation {
+  display: flex;
+  align-items: flex-start;
+  align-content:space-between;
+  justify-content: space-around;
+  text-align: left;
+  flex-flow: row nowrap;
+  width:100%;
 }
 
 .menu {
-  width: 50%; 
-  margin-left: 3%;
+  display:flex;
+  margin-left: 10%;
+  justify-content: flex-start;
+  align-content:space-around;
+  width:100%;
+  gap:3%;
+}
 
+.consent {
+  width: 100%; 
+  text-align: right;
 }
 
 div.consent > div > p {
@@ -78,8 +92,8 @@ div.consent > div > p {
     justify-content: flex-start;
   }
 
-  .navigation.defined {
-    flex-flow: row nowrap;
+  .navigation {
+    flex-flow: column nowrap;
     justify-content: flex-start;
   }
 

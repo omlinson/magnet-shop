@@ -47,10 +47,11 @@ const ImageGallery = ({ products, imageMap }) => {
       const slug = product.name ? slugify(product.name) : '#';
       const favoriteStatus = isFavorite(product) ? 'Unlike' : 'Like';
       return (
-        <div key={index} style={{ position: 'relative' }}>
+        <div key={index} style={{ position: 'relative' }} className={styles.productItem}>
           <Link to={product.name ? `/fridge-magnets/${slug}` : '#'}>
             {imageData && (
               <GatsbyImage
+              className={styles.productImage}
                 image={getImage(imageData.gatsbyImageData)}
                 alt={`Fridge Magnet ${product.name}`}
               />
