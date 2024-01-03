@@ -28,6 +28,9 @@ const ProductTemplate = ({ data }) => {
       'event': 'view_item',
       'currency': "CAD",
       'value': product.price,
+      'ecommerce':{
+      'currency': "CAD",
+      'value': product.price,
       'items': [
         {
           'item_id': product.sKU, 
@@ -39,6 +42,7 @@ const ProductTemplate = ({ data }) => {
           'quantity': 1,
         }
       ]
+      }
     });
   }, [product]);
 
