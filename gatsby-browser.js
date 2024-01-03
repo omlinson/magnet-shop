@@ -5,7 +5,7 @@
  */
 
 // You can delete this file if you're not using it
-let lastPathname = null;
+/* let lastPathname = null;
 
 exports.onRouteUpdate = ({ location, prevLocation }) => {
   if (window.dataLayer) {
@@ -20,4 +20,4 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
       lastPathname = location.pathname;
     }
   }
-};
+}; */ 
