@@ -72,7 +72,7 @@ const ImageGallery = ({ products, imageMap }) => {
               {product.availability}
             </div>
           )}
-          <button onClick={() => toggleFavorite(product)} style={{ marginTop: '10px' }}>
+          <button onClick={() => toggleFavorite(product)} style={{ }}>
           {favoriteStatus}
           </button>
         </div>
