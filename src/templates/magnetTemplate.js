@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import FavoriteToggle from "../components/favoriteToggle"
+import WishlistButton from "../components/wishlistButton"
 
 
 const slugify = (text) => {
@@ -77,7 +77,7 @@ const ProductTemplate = ({ data }) => {
           <p>Size: {product.size} ({product.sizeMm} mm / {product.sizeInch} in)</p>
           <p>Suggested Price: ${product.price} + SHIPPING</p>
         <div>
-        <FavoriteToggle productId={product.sKU} />
+        <WishlistButton productId={product.sKU} />
           <a  className="button" href="https://www.instagram.com/_omlinson" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block' }}>
           DM 4 MAGNET$
           </a>     

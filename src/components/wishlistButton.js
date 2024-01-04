@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const FavoriteToggle = ({ productId }) => {
+const WishlistButton = ({ productId }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
@@ -23,10 +23,10 @@ const FavoriteToggle = ({ productId }) => {
   };
 
   return (
-    <button onClick={toggleFavorite} style={{ display: 'inline-block' }}>
+    <button onClick={toggleFavorite} className={isFavorite ? 'unlike' : 'like'}>
       {isFavorite ? 'UNLIKE' : 'LIKE'}
     </button>
   );
 };
 
-export default FavoriteToggle;
+export default WishlistButton;

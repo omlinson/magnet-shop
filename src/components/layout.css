@@ -182,10 +182,10 @@ a.button, button {
   line-height:24px;
   font-family: sans-serif;
   font-family: var(--font-sans);
-  
+  transition: 0.5s ease;
 }
 
-a.button:hover,a.button:focus, button:hover, button:focus {
+a.button:hover,a.button:focus, button:hover, button:focus, button.like:hover, button.like:focus {
   box-shadow: 0 3px 0px #3a8b02;
   transform:translateY(1px);
   outline-width: 0;
@@ -197,7 +197,7 @@ a.button:hover,a.button:focus, button:hover, button:focus {
   
 }
 
-a.button:active, button:active {
+a.button:active, button:active, button.unlike:active, button.like:active {
   box-shadow: none;
   transform:translateY(5px);
   outline-width: 0;
@@ -207,7 +207,26 @@ a.button:active, button:active {
   font-family: var(--font-sans);
 }
 
+.like {
+  background-color: #58cc02;
+  box-shadow: 0 4px 0px #3a8b02;
 
+}
+
+.unlike {
+  background-color: #ff4b4b;
+  box-shadow: 0 4px 0px #cc0000;
+}
+
+button.unlike:hover, button.unlike:focus {
+  box-shadow: 0 3px 0px #cc0000;
+  transform:translateY(1px);
+  outline-width: 0;
+  text-decoration: none;
+  line-height:24px;
+  font-family: sans-serif;
+  font-family: var(--font-sans);
+}
 
 b,
 strong {
