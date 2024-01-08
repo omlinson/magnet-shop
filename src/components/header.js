@@ -1,7 +1,9 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import Logo from "./navLogo"
 import Consent from "./consent"
-import  "./layout.css"
+import BurgerMenu from "./burgerMenu"
+import NavBar from "./navBar"
+import NavWishlist from "./navWishlist"
 
 const Header = ({ siteTitle }) => {
 
@@ -9,42 +11,19 @@ const Header = ({ siteTitle }) => {
 
   const handleConsentChange = (isConsentDefined) => {
     setConsentDefined(isConsentDefined);
-  };
+    };
 
-  return (
-  <header
-    style={{
-      margin: `0 auto`,
-      padding: `var(--space-4) var(--size-gutter)`,
-    }}
-
-    className={`header ${consentDefined ? 'defined' : 'undefined'}`}
-  >
-    <div className="navigation">
-    <div className="logo">
-    <Link
-      to="/"
-    >
-      <button>{siteTitle}</button>
-    </Link>
-    </div>
-    <div  className="menu" >
-        <Link
-      to="/fridge-magnets"
-    >
-      Magnets
-    </Link>
-    <Link
-      to="/favorites"
-    >
-      Likes
-    </Link>
-    </div>
-    </div>
-    <div  className={`consent ${consentDefined ? 'defined' : 'undefined'}`}>
-      <Consent onConsentChange={handleConsentChange} /> 
-      </div>
+    return (
+      <header className={`${consentDefined ? 'defined' : 'undefined'}`}>
+      <BurgerMenu />
+        <Logo siteTitle={siteTitle} />
+        <NavWishlist />
+        <div  className={`consent ${consentDefined ? 'defined' : 'undefined'}`}>
+          <Consent onConsentChange={handleConsentChange} /> 
+        </div>
+        <NavBar />
      </header>
-)
+  )
 };
+
 export default Header

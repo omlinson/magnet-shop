@@ -43,25 +43,14 @@ body {
   margin: 0;
   word-wrap: break-word;
 }
+
 header {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  text-align: left;
-  flex-flow: row nowrap;
+  padding: var(--space-4) var(--size-gutter);
 }
 
-.navigation {
-  display: flex;
-  align-items: flex-start;
-  align-content:space-between;
-  justify-content: space-around;
-  text-align: left;
-  flex-flow: row nowrap;
-  width:100%;
-}
 
-.menu {
+.navBar {
   display:flex;
   margin-left: 10%;
   justify-content: flex-start;
@@ -88,30 +77,8 @@ div.consent > div > p {
   }
 
   header.defined {
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: flex-start;
-  }
-
-  .navigation {
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-  }
-
-  .logo {
-    margin-bottom: 15%;
-  }
-
-
-  .menu {
-    order:2;
-    display:flex;
-    margin-left: 0px;
-    justify-content: flex-start;
-    align-content:space-around;
-    width:100%;
-    gap:20%;
-    overflow:visible;
-
   }
 
   .consent.undefined{
@@ -134,7 +101,7 @@ div.consent > div > p {
 
 
   .consent.defined{
-    order: 1;
+    order: 0;
     text-align: right;
   }
 
@@ -145,7 +112,6 @@ div.consent > div > p {
  
 
 }
-
 a {
   background-color: transparent;
   color: var(--color-primary);
