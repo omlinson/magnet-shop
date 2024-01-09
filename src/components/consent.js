@@ -8,8 +8,13 @@ const ConsentComponent = ({ onConsentChange }) => {
   useEffect(() => {
     const userConsent = localStorage.getItem('cookieConsent');
     setConsent(userConsent);
-    onConsentChange(userConsent === 'yes' || userConsent === 'no');
+    if (userConsent === 'yes' || userConsent === 'no') {
+      onConsentChange(true);
+    } else {
+      onConsentChange(false);
+    }
   }, [onConsentChange]);
+
 
   const handleConsent = (response) => {
     localStorage.setItem('cookieConsent', response);
@@ -38,7 +43,7 @@ const ConsentComponent = ({ onConsentChange }) => {
   }
 
   return (
-    <div style={{marginBottom:`1%`}}>
+    <div style={{marginBottom:`1%`, transition:`display 2s`}}>
       <p>Let Google & Meta watch you?</p>
       <button onClick={() => handleConsent('yes')}>Yes</button>{' '}
       <button onClick={() => handleConsent('no')}>No</button>{' '}

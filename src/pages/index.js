@@ -1,47 +1,29 @@
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import * as styles from "../components/index.module.css"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import ProductList from "../components/productList"; 
 
 
 const IndexPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allGooglePimSheet {
-        nodes {
-          sKU
-          name
-          image
-          availability
-        }
-      }
-      allFile {
-        nodes {
-          childImageSharp {
-            gatsbyImageData(width: 300, quality: 80, layout: CONSTRAINED)
-          }
-          name
-        }
-      }
-    }
-  `);
-
-
-
-  const imageMap = new Map(
-    data.allFile.nodes.map(node => [node.name, node.childImageSharp])
-  );
-
-
+  
   return (
     <Layout>
-      <Seo title="Fridge Magnets" />
-      <div>
-        <h1>Fridge Magnets</h1>
+      <Seo title="Philip Tomlinson - Marketing Operations Consultant" />
+      <div className={styles.ir1}>
+      <div style={{flexGrow:`1`}}>
+        <p>If you're here, you likely know who I am</p>
+        <h1 className={styles.name}>I am Philip Tomlinson</h1>
+        <ul>
+          <li>Human on the Internet</li>
+          <li>Artist-Entrepreneur</li>
+          <li>Business Consultant</li>
+        </ul>
       </div>
-
-      <ProductList products={data.allGooglePimSheet.nodes} imageMap={imageMap} />
+      <div className={styles.photo}>
+      <p style={{fontSize:`var(--font-sx)`}}>Space for my face</p>
+      <p>🧑🏻🌱🌲</p>
+      </div>
+      </div>
       
     </Layout>
   );
