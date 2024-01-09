@@ -7,9 +7,9 @@ const Logo = ({siteTitle}) => {
 
 <div className="logo">
 <Link
-  to="/"
+  to="/fridge-magnets"
 >
-  <button>{siteTitle}</button>
+  <button>SHOP NOW</button>
 </Link>
 </div>
 
