@@ -3,12 +3,14 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import ProductList from "../components/productList"; 
+import { useWishlist } from "../context/wishlistContext"
 
 const Favorites = () => {
   // useState to hold the array of favorite products
-  const [favorites, setFavorites] = useState([]);
+  const { favorites } = useWishlist();
 
   // useState to hold the map of images associated with the products
+  const [favProducts, setFavProducts] = useState([]);
   const [imageMap, setImageMap] = useState(new Map());
 
   // Static query to fetch product and image data
@@ -34,25 +36,20 @@ const Favorites = () => {
   `);
 
   useEffect(() => {
-    // useEffect hook to update the state whenever the component mounts or data changes
-
-    // Fetch the list of favorite product IDs from local storage
-    let favoriteIds = JSON.parse(localStorage.getItem('favorites')) || [];
-
-    // Filter the products to get only those that are in the favorites list
-    const favoriteProducts = data.allGooglePimSheet.nodes.filter(product => 
-      favoriteIds.includes(product.sKU)
+  
+    const favProducts = data.allGooglePimSheet.nodes.filter(product => 
+      favorites.includes(product.sKU)
     );
+    setFavProducts(favProducts);
 
     // Create a new map for images where the key is the image name and value is the image data
     const newImageMap = new Map(
       data.allFile.nodes.map(fileNode => [fileNode.name, fileNode.childImageSharp])
     );
-
+  
     // Update the state with the filtered favorite products and the new image map
-    setFavorites(favoriteProducts);
     setImageMap(newImageMap);
-  }, [data.allGooglePimSheet.nodes, data.allFile.nodes]);
+  }, [favorites, data.allGooglePimSheet.nodes, data.allFile.nodes]);
 
   return (
     <Layout>
@@ -62,7 +59,7 @@ const Favorites = () => {
         {/* Conditional rendering based on whether the favorites array is empty */}
         {favorites.length === 0 ? (
           <p>You have not liked any magnets.</p>
-        ) : ( <ProductList products={favorites} imageMap={imageMap} />)}
+        ) : ( <ProductList products={favProducts} imageMap={imageMap} />)}
         
       </div>
       <div style={{marginTop:`2%`}}>

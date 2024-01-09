@@ -5,6 +5,22 @@
  */
 
 // You can delete this file if you're not using it
+
+
+
+import React from 'react'; 
+import { WishlistProvider } from './src/context/wishlistContext.js'; 
+
+const RootComponent = ({element}) => {
+  return (
+    <WishlistProvider>
+      {element}
+    </WishlistProvider>
+  );
+};
+
+export const wrapRootElement = RootComponent;
+
 /* let lastPathname = null;
 
 exports.onRouteUpdate = ({ location, prevLocation }) => {

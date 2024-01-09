@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
+import "./layout.css";
 
 const ConsentComponent = ({ onConsentChange }) => {
   const [consent, setConsent] = useState(null);
@@ -8,7 +9,7 @@ const ConsentComponent = ({ onConsentChange }) => {
     const userConsent = localStorage.getItem('cookieConsent');
     setConsent(userConsent);
     onConsentChange(userConsent === 'yes' || userConsent === 'no');
-  }, []);
+  }, [onConsentChange]);
 
   const handleConsent = (response) => {
     localStorage.setItem('cookieConsent', response);
@@ -30,11 +31,8 @@ const ConsentComponent = ({ onConsentChange }) => {
     return (
       <div class="active">
         <button onClick={() => handleConsent(consent === 'yes' ? 'no' : 'yes')}>
-          {consent === 'yes' ? ' o ' : ' - '}
+          {consent === 'yes' ? ' 🐵 ' : ' 🙈 '}
         </button>
-        <button onClick={() => handleConsent(consent === 'yes' ? 'no' : 'yes')}>
-          {consent === 'yes' ? ' o ' : ' - '}
-        </button> 
       </div> 
     );
   }

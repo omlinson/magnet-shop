@@ -43,27 +43,21 @@ body {
   margin: 0;
   word-wrap: break-word;
 }
+
 header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  text-align: left;
-  flex-flow: row nowrap;
+  padding: var(--space-4) var(--size-gutter);
 }
 
-.navigation {
-  display: flex;
-  align-items: flex-start;
-  align-content:space-between;
-  justify-content: space-around;
-  text-align: left;
-  flex-flow: row nowrap;
-  width:100%;
-}
-
-.menu {
+.headerTopRow {
   display:flex;
-  margin-left: 10%;
+  justify-content: space-between;
+  align-items: baseline; 
+  margin-bottom:2rem;
+}
+
+
+.navBar {
+  display:flex;
   justify-content: flex-start;
   align-content:space-around;
   width:100%;
@@ -72,50 +66,14 @@ header {
 
 .consent {
   width: 100%; 
-  text-align: right;
+  text-align: left;
 }
 
 div.consent > div > p {
   display:inline;
   margin-right: 1%;
 }
-
-@media(max-width: 900px) {
-  
-  header {
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-  }
-
-  header.defined {
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-  }
-
-  .navigation {
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-  }
-
-  .logo {
-    margin-bottom: 15%;
-  }
-
-
-  .menu {
-    order:2;
-    display:flex;
-    margin-left: 0px;
-    justify-content: flex-start;
-    align-content:space-around;
-    width:100%;
-    gap:20%;
-    overflow:visible;
-
-  }
-
   .consent.undefined{
-  order: -1;
   margin-bottom:1%;
   text-align: left;
   background-color: #f8f9fa; /* Light and neutral background */
@@ -131,20 +89,9 @@ div.consent > div > p {
   justify-content: center; /* Center content */
   text-align: center; /* Center text alignment */
   }
-
-
-  .consent.defined{
-    order: 1;
-    text-align: right;
-  }
-
    div.consent > div > p {
   display:block;
   }
-
- 
-
-}
 
 a {
   background-color: transparent;
@@ -182,7 +129,7 @@ a.button, button {
   line-height:24px;
   font-family: sans-serif;
   font-family: var(--font-sans);
-  transition: 0.5s ease;
+  transition: 0.75s ease;
 }
 
 a.button:hover,a.button:focus, button:hover, button:focus, button.like:hover, button.like:focus {
@@ -207,7 +154,7 @@ a.button:active, button:active, button.unlike:active, button.like:active {
   font-family: var(--font-sans);
 }
 
-.like {
+.like  {
   background-color: #58cc02;
   box-shadow: 0 4px 0px #3a8b02;
 
