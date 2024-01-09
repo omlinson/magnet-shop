@@ -10,3 +10,17 @@
 exports.onRenderBody = ({ setHtmlAttributes }) => {
   setHtmlAttributes({ lang: `en` })
 }
+
+
+import React from 'react'; 
+import { WishlistProvider } from './src/context/wishlistContext.js'; 
+
+const RootComponent = ({element}) => {
+  return (
+    <WishlistProvider>
+      {element}
+    </WishlistProvider>
+  );
+};
+
+export const wrapRootElement = RootComponent;
