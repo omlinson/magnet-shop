@@ -12,7 +12,7 @@ const NavBar = () => {
             About
         </Link>
         <Link
-            to="/favorites"
+            to="/fridge-magnets"
         >
         Fridge Magnets
         </Link>

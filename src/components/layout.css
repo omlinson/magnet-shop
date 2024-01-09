@@ -45,14 +45,19 @@ body {
 }
 
 header {
-  display: flex;
   padding: var(--space-4) var(--size-gutter);
+}
+
+.headerTopRow {
+  display:flex;
+  justify-content: space-between;
+  align-items: baseline; 
+  margin-bottom:2rem;
 }
 
 
 .navBar {
   display:flex;
-  margin-left: 10%;
   justify-content: flex-start;
   align-content:space-around;
   width:100%;
@@ -61,28 +66,14 @@ header {
 
 .consent {
   width: 100%; 
-  text-align: right;
+  text-align: left;
 }
 
 div.consent > div > p {
   display:inline;
   margin-right: 1%;
 }
-
-@media(max-width: 900px) {
-  
-  header {
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-  }
-
-  header.defined {
-    flex-flow: row wrap;
-    justify-content: flex-start;
-  }
-
   .consent.undefined{
-  order: -1;
   margin-bottom:1%;
   text-align: left;
   background-color: #f8f9fa; /* Light and neutral background */
@@ -98,20 +89,10 @@ div.consent > div > p {
   justify-content: center; /* Center content */
   text-align: center; /* Center text alignment */
   }
-
-
-  .consent.defined{
-    order: 0;
-    text-align: right;
-  }
-
    div.consent > div > p {
   display:block;
   }
 
- 
-
-}
 a {
   background-color: transparent;
   color: var(--color-primary);
@@ -148,7 +129,7 @@ a.button, button {
   line-height:24px;
   font-family: sans-serif;
   font-family: var(--font-sans);
-  transition: 0.5s ease;
+  transition: 0.75s ease;
 }
 
 a.button:hover,a.button:focus, button:hover, button:focus, button.like:hover, button.like:focus {
@@ -173,7 +154,7 @@ a.button:active, button:active, button.unlike:active, button.like:active {
   font-family: var(--font-sans);
 }
 
-.like {
+.like  {
   background-color: #58cc02;
   box-shadow: 0 4px 0px #3a8b02;
 

@@ -8,7 +8,7 @@ const NavWish = () => {
     const { wishlistCount } = useWishlist();
 
     return(
-        <div  className="navWishlist" >
+        <div  className="navWishlist" style={{width:`100%`}}>
         <Link
             to="/favorites"
             style={{textDecoration:`none`}}

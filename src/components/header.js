@@ -15,11 +15,22 @@ const Header = ({ siteTitle }) => {
 
     return (
       <header className={`${consentDefined ? 'defined' : 'undefined'}`}>
-      <BurgerMenu />
-        <Logo siteTitle={siteTitle} />
-        <NavWishlist />
-        <div  className={`consent ${consentDefined ? 'defined' : 'undefined'}`}>
-          <Consent onConsentChange={handleConsentChange} /> 
+          {!consentDefined && (
+        <div className="consent undefined">
+          <Consent onConsentChange={handleConsentChange} />
+        </div>
+      )}
+        <div className="headerTopRow">
+          <div style={{ display: 'flex', alignItems: 'baseline', gap:`10px`  }}>
+            <BurgerMenu />
+            <Logo siteTitle={siteTitle} />
+          </div>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap:`15px` }}>
+            <NavWishlist />
+            {consentDefined && (  <div  className="defined">
+                <Consent onConsentChange={handleConsentChange} /> 
+              </div> )}
+          </div>
         </div>
         <NavBar />
      </header>
