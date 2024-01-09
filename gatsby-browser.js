@@ -14,7 +14,7 @@ import { WishlistProvider } from './src/context/wishlistContext.js';
 const RootComponent = ({element}) => {
   return (
     <WishlistProvider>
-{element}
+      {element}
     </WishlistProvider>
   );
 };

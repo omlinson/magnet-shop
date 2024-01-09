@@ -6,19 +6,22 @@ export const useWishlist = () => useContext(WishlistContext);
 
 export const WishlistProvider = ({ children }) => {
   const [wishlistCount, setWishlistCount] = useState(0);
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
-    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    setWishlistCount(favorites.length);
+    const newFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    setFavorites(newFavorites);
+    setWishlistCount(newFavorites.length);
   }, []);
 
   const updateWishlist = () => {
-    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    setWishlistCount(favorites.length);
+    const newFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    setFavorites(newFavorites);
+    setWishlistCount(newFavorites.length);
   };
 
   return (
-    <WishlistContext.Provider value={{ wishlistCount, updateWishlist }}>
+    <WishlistContext.Provider value={{ wishlistCount, updateWishlist, favorites }}>
       {children}
     </WishlistContext.Provider>
   );
