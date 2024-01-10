@@ -48,10 +48,15 @@ const Header = ({ siteTitle }) => {
             <Logo siteTitle={siteTitle} />
           </div>
           <div style={{ display: 'flex', alignItems: 'baseline', gap:`15px` }}>
-            <NavWishlist />
-            {consentDefined && (  <div  className="defined">
+            
+            {consentDefined && (  
+              <>
+                <NavWishlist />
+                <div  className="defined">
                 <Consent onConsentChange={handleConsentChange} /> 
-              </div> )}
+              </div>
+              </>
+               )}
           </div>
         </div>
         <NavBar />
