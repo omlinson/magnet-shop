@@ -19,7 +19,7 @@ const Header = ({ siteTitle }) => {
     setConsentDefined(isConsentDefined);
     };
 
-    if (consentDefined === null) {
+    /* keeping in case issue happens again if (consentDefined === null) {
       return (<header className={`${consentDefined ? 'defined' : 'undefined'}`}>
       
     <div className="headerTopRow">
@@ -33,11 +33,11 @@ const Header = ({ siteTitle }) => {
     </div>
     <NavBar />
  </header>)
-    }
+    } */
 
     return (
       <header className={`${consentDefined ? 'defined' : 'undefined'}`}>
-          {!consentDefined && (
+          {consentDefined !== null && !consentDefined && (
         <div className="consent undefined">
           <Consent onConsentChange={handleConsentChange} />
         </div>
