@@ -72,7 +72,6 @@ module.exports = {
       resolve: 'gatsby-source-google-spreadsheets',
       options: {
         spreadsheetId: process.env.SPREADSHEET,
-        // credentials: require('../web/omlinson-2950bd6dcaa3.json')
         credentials: {
           type: 'service_account',
           project_id: process.env.PROJECT_ID,
