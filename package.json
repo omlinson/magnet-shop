@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Philip Tomlinson",
   "dependencies": {
-    "gatsby": "^5.12.12",
+    "gatsby": "^5.13.1",
     "gatsby-adapter-netlify": "^1.1.1",
     "gatsby-plugin-google-tagmanager": "^5.13.0",
     "gatsby-plugin-image": "^3.12.3",
