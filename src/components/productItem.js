@@ -14,7 +14,7 @@ const slugify = (text) => {
     .trim();                  
 };
 
-const ProductItem = ({ product, imageMap }) => {
+const ProductItem = ({ product, imageMap,  showWishlistButton = true }) => {
     const imageData = imageMap.get(product.image);
     const slug = product.name ? slugify(product.name) : '#';
     return (
@@ -42,7 +42,12 @@ const ProductItem = ({ product, imageMap }) => {
               {product.availability}
             </div>
         )}
-        <WishlistButton productId={product.sKU} />
+        <div style={{display:`flex`, flexDirection:`column`}}>
+          <Link to={product.name ? `/fridge-magnets/${slug}` : '#'} >
+            <p className={styles.productName} style={{fontSize:`1.25rem`, marginTop:`0px`, color:`black`}}>{product.name}</p>
+          </Link>
+          {showWishlistButton && <WishlistButton productId={product.sKU} />}
+        </div>
       </div>
     );
   };

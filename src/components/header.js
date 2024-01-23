@@ -1,23 +1,14 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import Logo from "./navLogo"
 import Consent from "./consent"
 import BurgerMenu from "./burgerMenu"
 import NavBar from "./navBar"
 import NavWishlist from "./navWishlist"
+import { useWishlist } from '../context/wishlistContext.js';
 
 const Header = ({ siteTitle }) => {
 
-  const [consentDefined, setConsentDefined] = useState(null);
-
-  useEffect(() => {
-    const cookieConsent = localStorage.getItem('cookieConsent');
-    const isConsentDefined = cookieConsent === 'yes' || cookieConsent === 'no';
-    setConsentDefined(isConsentDefined); // Set based on local storage
-  }, []);
-
-  const handleConsentChange = (isConsentDefined) => {
-    setConsentDefined(isConsentDefined);
-    };
+  const { consentDefined, handleConsentChange } = useWishlist();
 
     /* keeping in case issue happens again if (consentDefined === null) {
       return (<header className={`${consentDefined ? 'defined' : 'undefined'}`}>
@@ -53,7 +44,7 @@ const Header = ({ siteTitle }) => {
               <>
                 <NavWishlist />
                 <div  className="defined">
-                <Consent onConsentChange={handleConsentChange} /> 
+                <Consent onConsentChange={handleConsentChange} consent={consentDefined} /> 
               </div>
               </>
                )}

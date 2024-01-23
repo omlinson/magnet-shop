@@ -22,14 +22,14 @@ const Footer = ({ siteTitle }) => (
 > <p> 
   
 <Link
-      to="/about"
+      to="/about-omlinson"
     >
       About
     </Link>
     <> · </>
     {moreLinks.map((link, i) => (
       <React.Fragment key={link.url}>
-        <a href={`${link.url}`}>{link.text}</a>
+        <a target="_blank" rel="noreferrer" href={`${link.url}`}>{link.text}</a>
         {i !== moreLinks.length - 1 && <> · </>}
       </React.Fragment>
     ))} </p>  
