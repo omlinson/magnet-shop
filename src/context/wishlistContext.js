@@ -20,8 +20,22 @@ export const WishlistProvider = ({ children }) => {
     setWishlistCount(newFavorites.length);
   };
 
+  const [consentDefined, setConsentDefined] = useState(null);
+
+  useEffect(() => {
+    // Load consent state from localStorage
+    const cookieConsent = localStorage.getItem('cookieConsent');
+    setConsentDefined(cookieConsent);
+  }, []);
+
+  const handleConsentChange = (consent) => {
+    setConsentDefined(consent);
+    localStorage.setItem('cookieConsent', consent);
+  };
+
+
   return (
-    <WishlistContext.Provider value={{ wishlistCount, updateWishlist, favorites }}>
+    <WishlistContext.Provider value={{ wishlistCount, updateWishlist, favorites,consentDefined, handleConsentChange }}>
       {children}
     </WishlistContext.Provider>
   );

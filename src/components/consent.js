@@ -1,22 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
 import "./layout.css";
 
-const ConsentComponent = ({ onConsentChange }) => {
-  const [consent, setConsent] = useState(null);
+const ConsentComponent = ({ onConsentChange, consent }) => {
 
-  // Effect for initializing and updating consent state
-  useEffect(() => {
-    const userConsent = localStorage.getItem('cookieConsent');
-      setConsent(userConsent);
-      onConsentChange(userConsent === 'yes' || userConsent === 'no');
-  }, [onConsentChange]);
+  console.log('Consent value:', consent);
 
   // Handler for setting consent
   const handleConsent = (response) => {
-    localStorage.setItem('cookieConsent', response);
-    setConsent(response);
-    onConsentChange(response === 'yes' || response === 'no');
+    onConsentChange(response);
     // Event tracking
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
