@@ -3,7 +3,7 @@ import * as styles from "../components/index.module.css"
 import { Link } from 'gatsby';
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import ProductList from "../components/productList";
+import ProductList from "../components/productList.js";
 
 
 const IndexPage = () => {
@@ -24,10 +24,10 @@ const IndexPage = () => {
       </div>
       <div >
         <h2>Random Fridge Magnets</h2>
-        <ProductList qty='3' showWishlistButton={false} />
+        {/* <ProductList qty='3' showWishlistButton={false} />
         <Link to="/fridge-magnets">
           <button style={{width:`100%`, marginTop:`1.5rem`}}>SHOP ALL</button>
-        </Link>
+        </Link> */ }
       </div>
       
     </Layout>
