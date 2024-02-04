@@ -17,7 +17,7 @@ const ProductList = ({ products, imageMap, qty, showWishlistButton }) => {
       allFile {
         nodes {
           childImageSharp {
-            gatsbyImageData(width: 300, quality: 80, layout: CONSTRAINED)
+            gatsbyImageData(width: 300, quality: 90, layout: CONSTRAINED)
           }
           name
         }

@@ -29,7 +29,7 @@ exports.createPages = async ({ graphql, actions }) => {
           name
           tag1
         }
-        distinct(field: tag1)
+        distinct(field: {tag1: SELECT})
       }
     }
   `)
@@ -62,17 +62,6 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         sKU: node.sKU,
         imageName: node.image
-      },
-    });
-  });
-
-  result.data.allGooglePimSheet.distinct.forEach(tag => {
-    const tagSlug = slugify(tag);
-    createPage({
-      path: `/${tagSlug}-fridge-magnets`,
-      component: require.resolve("./src/templates/tagTemplate.js"),
-      context: {
-        tag: tag
       },
     });
   });
