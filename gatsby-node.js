@@ -34,6 +34,25 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
+  // Create PLP pages
+    const products = result.data.allGooglePimSheet.nodes
+    const productsPerPage = 24
+    const numPages = Math.ceil(products.length / productsPerPage)
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/fridge-magnets` : `/fridge-magnets/${i + 1}`,
+        component: require.resolve("./src/templates/plpTemplate.js"),
+        context: {
+          limit: productsPerPage,
+          skip: i * productsPerPage,
+          numPages,
+          currentPage: i + 1,
+          plpSlug: '/fridge-magnets'
+        },
+      })
+    })
+
+
   // Create individual magnet pages
   result.data.allGooglePimSheet.nodes.forEach(node => {
     const pathSlug = slugify(node.name);
