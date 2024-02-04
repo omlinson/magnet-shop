@@ -15,17 +15,16 @@ const AboutOmlinson = () => (
     <p>You can find source code on <a href="https://github.com/omlinson/magnet-shop" target="_blank" rel="noreferrer">Github</a></p>
     <h4>Current Goals</h4>
     <ul>
-      <li>First attempt at shipping to Ontario has not yet been completed</li>
-      <li>First in-person event will be on Jan 28th</li>
-      <li>Basic integration with Square</li>
+      <li>Successfully ship within Canada</li>
+      <li>Improve code quality</li>
+      <li><a href="https://github.com/omlinson/magnetic-newsboy" target="_blank" rel="noreferrer">Automate Instagram marketing</a></li>
     </ul>
     <h2>Consultancy</h2>
-      <p>I have placed this in second rank as I'm currently having too much fun in the lab. I am looking to add another 1 or 2 clients maximum. Feel free to contact me.</p>
+      <p>I am looking to add another 1 or 2 clients maximum. Feel free to contact me.</p>
       <h4>Current Goals</h4>
     <ul>
-      <li>Finalize domain & plan soft-launch</li>
-      <li>Create first offers</li>
-      <li>Start capturing emails</li>
+      <li>Capture emails</li>
+      <li>LinkedIn consistency</li>
     </ul>
   </div>
   
