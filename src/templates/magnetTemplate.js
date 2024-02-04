@@ -52,8 +52,6 @@ const ProductTemplate = ({ data }) => {
       <Seo title={product.name + " Fridge Magnet"} />
       <div>
         <Link style={{fontSize:`small`}} to={`/fridge-magnets`}>All Fridge Magnets</Link>
-        <Link style={{fontSize:`small`, marginLeft:`3%`}} to={`/${slugify(product.tag1)}-fridge-magnets`}>
-          All {product.tag1} Magnets</Link>
         <h1>{product.name}</h1>
         <div style={{ position: 'relative', maxWidth: '600px', margin: '0 auto 0 0' }}>
           <GatsbyImage image={getImage(productImageData)} alt={product.name} />

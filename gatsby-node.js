@@ -29,10 +29,29 @@ exports.createPages = async ({ graphql, actions }) => {
           name
           tag1
         }
-        distinct(field: tag1)
+        distinct(field: {tag1: SELECT})
       }
     }
   `)
+
+  // Create PLP pages
+    const products = result.data.allGooglePimSheet.nodes
+    const productsPerPage = 24
+    const numPages = Math.ceil(products.length / productsPerPage)
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/fridge-magnets` : `/fridge-magnets/${i + 1}`,
+        component: require.resolve("./src/templates/plpTemplate.js"),
+        context: {
+          limit: productsPerPage,
+          skip: i * productsPerPage,
+          numPages,
+          currentPage: i + 1,
+          plpSlug: '/fridge-magnets'
+        },
+      })
+    })
+
 
   // Create individual magnet pages
   result.data.allGooglePimSheet.nodes.forEach(node => {
@@ -43,17 +62,6 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         sKU: node.sKU,
         imageName: node.image
-      },
-    });
-  });
-
-  result.data.allGooglePimSheet.distinct.forEach(tag => {
-    const tagSlug = slugify(tag);
-    createPage({
-      path: `/${tagSlug}-fridge-magnets`,
-      component: require.resolve("./src/templates/tagTemplate.js"),
-      context: {
-        tag: tag
       },
     });
   });

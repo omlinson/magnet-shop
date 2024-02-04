@@ -1,45 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import ProductItem from './productItem';
 import * as styles from "./product.module.css"; 
 
 const ProductList = ({ products, imageMap, qty, showWishlistButton }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      allGooglePimSheet {
-        nodes {
-          sKU
-          name
-          image
-          availability
-        }
-      }
-      allFile {
-        nodes {
-          childImageSharp {
-            gatsbyImageData(width: 300, quality: 80, layout: CONSTRAINED)
-          }
-          name
-        }
-      }
-    }
-  `);
+  // Removed the defaulting logic to rely solely on props
 
-  const defaultProducts = products || data.allGooglePimSheet.nodes;
-  const defaultImageMap = imageMap || new Map(
-    data.allFile.nodes.map(node => [node.name, node.childImageSharp])
-  );
-
-  const [displayProducts, setDisplayProducts] = useState(defaultProducts);
+  const [displayProducts, setDisplayProducts] = useState(products);
 
   useEffect(() => {
-    if (qty && qty < defaultProducts.length) {
-      const shuffled = [...defaultProducts].sort(() => 0.5 - Math.random());
+    if (qty && qty < products.length) {
+      const shuffled = [...products].sort(() => 0.5 - Math.random());
       setDisplayProducts(shuffled.slice(0, qty));
     } else {
-      setDisplayProducts(defaultProducts);
+      setDisplayProducts(products);
     }
-  }, [defaultProducts, qty]);
+  }, [products, qty]);
 
   return (
     <div className={styles.imageGallery}>
@@ -47,7 +22,7 @@ const ProductList = ({ products, imageMap, qty, showWishlistButton }) => {
         <ProductItem
           key={index} 
           product={product}
-          imageMap={defaultImageMap}
+          imageMap={imageMap} // Directly using the provided imageMap prop
           showWishlistButton={showWishlistButton}
         />
       ))}

@@ -22,7 +22,7 @@ const NavBar = () => {
         <Link
             to="/fridge-magnets"
         >
-        Ecom Lab
+        Fridge magnets
         </Link>
         
         </div>
