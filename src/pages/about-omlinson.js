@@ -17,7 +17,7 @@ const AboutOmlinson = () => (
     <ul>
       <li>Successfully ship within Canada</li>
       <li>Improve code quality</li>
-      <li><a href="https://github.com/omlinson/magnetic-newsboy" target="_blank" rel="noreferrer">Automate Instagram marketing</a></li>
+      <li><a href="https://github.com/omlinson/autopost-instagram" target="_blank" rel="noreferrer">Automate Instagram marketing</a></li>
     </ul>
     <h2>Consultancy</h2>
       <p>I am looking to add another 1 or 2 clients maximum. Feel free to contact me.</p>
