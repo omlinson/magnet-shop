@@ -27,9 +27,7 @@ exports.createPages = async ({ graphql, actions }) => {
           sKU
           image
           name
-          tag1
         }
-        distinct(field: {tag1: SELECT})
       }
     }
   `)
@@ -61,7 +59,8 @@ exports.createPages = async ({ graphql, actions }) => {
       component: require.resolve("./src/templates/magnetTemplate.js"),
       context: {
         sKU: node.sKU,
-        imageName: node.image
+        imageName: node.image,
+        googleImage: node.imageGcloudJpg
       },
     });
   });

@@ -15,7 +15,7 @@ module.exports = {
     title: `omlinson`,
     description: `Philip Tomlinson's centralized web presence. Business consultant during the day, weird artist at night.`,
     author: `Philip Tomlinson`,
-    siteUrl: `https://t.omlinson.com/`,
+    siteUrl: `https://t.omlinson.com`,
   },
   plugins: [
     {
@@ -54,6 +54,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -6,21 +6,9 @@ import Seo from "../components/seo"
 import WishlistButton from "../components/wishlistButton"
 
 
-const slugify = (text) => {
-  return text
-    .toString()
-    .toLowerCase()
-    .replace(/\s+/g, '-')     // Replace spaces with -
-    .replace(/[^\w\-]+/g, '') // Remove all non-word chars
-    .replace(/\-\-+/g, '-')   // Replace multiple - with single -
-    .trim();                  // Trim - from start and end of text
-};
-
-
 const ProductTemplate = ({ data }) => {
   const product = data.googlePimSheet 
   const productImageData = data.file.childImageSharp.gatsbyImageData
-
 
   useEffect(() => {
     window.dataLayer = window.dataLayer || [];
@@ -54,7 +42,7 @@ const ProductTemplate = ({ data }) => {
         <Link style={{fontSize:`small`}} to={`/fridge-magnets`}>All Fridge Magnets</Link>
         <h1>{product.name}</h1>
         <div style={{ position: 'relative', maxWidth: '600px', margin: '0 auto 0 0' }}>
-          <GatsbyImage image={getImage(productImageData)} alt={product.name} />
+        <GatsbyImage image={getImage(productImageData)} alt={product.name} />
           {product.availability !== "in stock" && (
             <div style={{
               position: 'absolute',
@@ -97,7 +85,6 @@ export const query = graphql`
       sizeMm
       sizeInch
       availability
-      tag1
     }
     file(name: { eq: $imageName }) {
       childImageSharp {

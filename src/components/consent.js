@@ -33,7 +33,7 @@ const ConsentComponent = ({ onConsentChange, consent }) => {
         </div>
       ) : (
         <div style={{marginBottom:`1%`, transition:`display 2s`}}>
-          <p>Let Google & Meta watch you?</p>
+          <p>Let Google continue monitoring you?</p>
           <button onClick={() => handleConsent('yes')}>Yes</button>{' '}
           <button onClick={() => handleConsent('no')}>No</button>{' '}
           <Link to="/privacy-policy"><button>Maybe</button></Link>

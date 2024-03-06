@@ -25,6 +25,7 @@ function Seo({ description, title, children }) {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+  const slug = window.location.pathname;
 
   return (
     <>
@@ -37,6 +38,7 @@ function Seo({ description, title, children }) {
       <meta name="twitter:creator" content={site.siteMetadata?.author || ``} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
+      <link rel="canonical" href={`https://t.omlinson.com${slug}`} />
       {children}
     </>
   )
