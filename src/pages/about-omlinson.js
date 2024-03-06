@@ -27,12 +27,10 @@ const AboutOmlinson = () => (
         <li>Improve logging & PIM access</li>
       </ul>
     <h2>Consultancy</h2>
-      <p>I have placed this in second rank as I'm currently having too much fun in the lab. I am looking to add another 1 or 2 clients maximum. <a href="https://www.calendly.com/omlinson" target="_blank" rel="noreferrer">Feel free to book a conversation</a>.</p>
+      <p>I'm currently having too much fun in the lab. <a href="https://www.calendly.com/omlinson" target="_blank" rel="noreferrer">Feel free to book a conversation</a>.</p>
       <h4>Current Goals</h4>
     <ul>
-      <li>Finalize domain & plan soft-launch</li>
-      <li>Create first offers</li>
-      <li>Start capturing emails</li>
+      <li>Capture emails</li>
     </ul>
   </div>
   
