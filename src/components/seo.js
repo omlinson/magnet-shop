@@ -8,8 +8,8 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-function Seo({ description, title, children }) {
-  const { site } = useStaticQuery(
+function Seo({ description, title, children, canonical}) {
+  const { site} = useStaticQuery(
     graphql`
       query {
         site {
@@ -25,23 +25,23 @@ function Seo({ description, title, children }) {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
-  const slug = window.location.pathname;
+  const slug = {canonical}
 
-  return (
-    <>
-      <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
-      <meta name="description" content={metaDescription} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={metaDescription} />
-      <meta property="og:type" content="website" />
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:creator" content={site.siteMetadata?.author || ``} />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={metaDescription} />
-      <link rel="canonical" href={`https://t.omlinson.com${slug}`} />
-      {children}
-    </>
-  )
-}
+    return (
+      <>
+        <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:creator" content={site.siteMetadata?.author || ``} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={metaDescription} />
+        {/* <link rel="canonical" href={`https://t.omlinson.com${slug}`} /> */}
+        {children}
+      </>
+    )
+  }
 
 export default Seo
