@@ -27,7 +27,6 @@ exports.createPages = async ({ graphql, actions }) => {
           sKU
           image
           name
-          tag1
         }
         distinct(field: {tag1: SELECT})
       }
