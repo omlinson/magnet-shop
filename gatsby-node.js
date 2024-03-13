@@ -28,7 +28,6 @@ exports.createPages = async ({ graphql, actions }) => {
           image
           name
         }
-        distinct(field: {tag1: SELECT})
       }
     }
   `)
