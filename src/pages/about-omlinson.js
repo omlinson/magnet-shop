@@ -29,7 +29,7 @@ const AboutOmlinson = () => (
           <li>Get v3 video generator running with Stability AI animation GPT</li>
           <li>Update public repo</li>
         </ul>
-    <h2>Consultancy / B</h2>
+    <h2>Consultancy / B2B</h2>
       <p>I'm currently having too much fun in the lab. <a href="https://www.calendly.com/omlinson" target="_blank" rel="noreferrer">Feel free to book a conversation</a>.</p>
       <h4>Current Goals</h4>
     <ul>
