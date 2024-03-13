@@ -23,12 +23,12 @@ const AboutOmlinson = () => (
     <h2>Social Media Bots</h2>
       <p>I've started working on some GPT powered social media bots. You can see the progress on my <a href="https://www.instagram.com/_omlinson" target="_blank" rel="noreferrer">Instagram</a>.</p>
       <h4>Current Goals</h4>
-      <ul>
-        <li>Launch v2 of bot in production with an automate story everyday using Stability AI image-to-video GPT<li>
-        <li>Solve the music / audio problem. OpenAI text-to-voice not good enough.</li>
-        <li>Get v3 video generator running with Stability AI animation GPT</li>
-        <li>Update public repo</li>
-      </ul>
+        <ul>
+          <li>Launch v2 of bot in production with an automate story everyday using Stability AI image-to-video GPT</li>
+          <li>Solve the music / audio problem. OpenAI text-to-voice not good enough.</li>
+          <li>Get v3 video generator running with Stability AI animation GPT</li>
+          <li>Update public repo</li>
+        </ul>
     <h2>Consultancy / B</h2>
       <p>I'm currently having too much fun in the lab. <a href="https://www.calendly.com/omlinson" target="_blank" rel="noreferrer">Feel free to book a conversation</a>.</p>
       <h4>Current Goals</h4>
