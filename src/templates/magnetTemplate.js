@@ -97,7 +97,6 @@ export const query = graphql`
       sizeMm
       sizeInch
       availability
-      tag1
     }
     file(name: { eq: $imageName }) {
       childImageSharp {

@@ -15,17 +15,25 @@ const AboutOmlinson = () => (
     <p>You can find source code on <a href="https://github.com/omlinson/magnet-shop" target="_blank" rel="noreferrer">Github</a></p>
     <h4>Current Goals</h4>
     <ul>
-      <li>First attempt at shipping to Ontario has not yet been completed</li>
-      <li>First in-person event will be on Jan 28th</li>
-      <li>Basic integration with Square</li>
+      <li>Improve build time</li>
+      <li>Basic SEO lol</li>
+      <li>Leverage PIM improvements on front-end</li>
+      <li>Build navigation filters</li>
     </ul>
-    <h2>Consultancy</h2>
-      <p>I have placed this in second rank as I'm currently having too much fun in the lab. I am looking to add another 1 or 2 clients maximum. Feel free to contact me.</p>
+    <h2>Social Media Bots</h2>
+      <p>I've started working on some GPT powered social media bots. You can see the progress on my <a href="https://www.instagram.com/_omlinson" target="_blank" rel="noreferrer">Instagram</a>.</p>
+      <h4>Current Goals</h4>
+        <ul>
+          <li>Launch v2 of bot in production with an automate story everyday using Stability AI image-to-video GPT</li>
+          <li>Solve the music / audio problem. OpenAI text-to-voice not good enough.</li>
+          <li>Get v3 video generator running with Stability AI animation GPT</li>
+          <li>Update public repo</li>
+        </ul>
+    <h2>Consultancy / B2B</h2>
+      <p>I'm currently having too much fun in the lab. <a href="https://www.calendly.com/omlinson" target="_blank" rel="noreferrer">Feel free to book a conversation</a>.</p>
       <h4>Current Goals</h4>
     <ul>
-      <li>Finalize domain & plan soft-launch</li>
-      <li>Create first offers</li>
-      <li>Start capturing emails</li>
+      <li>Capture emails</li>
     </ul>
   </div>
   
