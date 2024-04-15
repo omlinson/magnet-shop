@@ -38,6 +38,8 @@ exports.createPages = async ({ graphql, actions }) => {
     const productsPerPage = 24
     const numPages = Math.ceil(products.length / productsPerPage)
     Array.from({ length: numPages }).forEach((_, i) => {
+      const pageProducts = products.slice(i * productsPerPage, (i + 1) * productsPerPage);
+      const pageImageNames = pageProducts.map(p => p.image);
       createPage({
         path: i === 0 ? `/fridge-magnets` : `/fridge-magnets/${i + 1}`,
         component: require.resolve("./src/templates/plpTemplate.js"),
@@ -46,7 +48,8 @@ exports.createPages = async ({ graphql, actions }) => {
           skip: i * productsPerPage,
           numPages,
           currentPage: i + 1,
-          plpSlug: '/fridge-magnets'
+          plpSlug: '/fridge-magnets',
+          imageNames: pageImageNames
         },
       })
     })
