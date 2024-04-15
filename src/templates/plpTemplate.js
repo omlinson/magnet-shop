@@ -27,7 +27,7 @@ const PlpTemplate = ({ data, pageContext }) => {
 
 export const query = graphql`
   query ProductsQuery($limit: Int!, $skip: Int!) {
-    allGooglePimSheet(limit: $limit, skip: $skip) {
+    allGooglePimSheet(limit: $limit, skip: $skip, filter: {website: {eq: 1}}) {
       nodes {
         sKU
         image

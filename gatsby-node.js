@@ -22,11 +22,12 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(`
     {
-      allGooglePimSheet {
+      allGooglePimSheet(filter: {website: {eq: 1}}) {
         nodes {
           sKU
           image
           name
+          website
         }
       }
     }
