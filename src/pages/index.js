@@ -23,8 +23,10 @@ const IndexPage = () => {
       </div>
       </div>
       <div >
+        
+        {/* 
         <h2>Random Fridge Magnets</h2>
-        {/* <ProductList qty='3' showWishlistButton={false} />
+        <ProductList qty='3' showWishlistButton={false} />
         <Link to="/fridge-magnets">
           <button style={{width:`100%`, marginTop:`1.5rem`}}>SHOP ALL</button>
         </Link> */ }
