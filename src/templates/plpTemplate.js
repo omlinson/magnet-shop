@@ -26,7 +26,7 @@ const PlpTemplate = ({ data, pageContext }) => {
 };
 
 export const query = graphql`
-  query ProductsQuery($limit: Int!, $skip: Int!) {
+  query ProductsQuery($limit: Int!, $skip: Int!, $imageNames: [String]!) {
     allGooglePimSheet(limit: $limit, skip: $skip, filter: {website: {eq: 1}}) {
       nodes {
         sKU
@@ -35,7 +35,7 @@ export const query = graphql`
         availability
       }
     }
-    allFile {
+    allFile(filter: {name: {in: $imageNames}}) {
       nodes {
         name
         childImageSharp {
