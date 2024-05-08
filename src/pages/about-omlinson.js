@@ -15,7 +15,6 @@ const AboutOmlinson = () => (
     <p>You can find source code on <a href="https://github.com/omlinson/magnet-shop" target="_blank" rel="noreferrer">Github</a></p>
     <h4>Current Goals</h4>
     <ul>
-      <li>Improve build time</li>
       <li>Basic SEO lol</li>
       <li>Leverage PIM improvements on front-end</li>
       <li>Build navigation filters</li>
@@ -30,9 +29,9 @@ const AboutOmlinson = () => (
           <li>Update public repo</li>
         </ul>
     <h2>Consultancy / B2B</h2>
-      <p>I'm currently having too much fun in the lab. <a href="https://www.calendly.com/omlinson" target="_blank" rel="noreferrer">Feel free to book a conversation</a>.</p>
       <h4>Current Goals</h4>
     <ul>
+      <li>Work less</li>
       <li>Capture emails</li>
     </ul>
   </div>
